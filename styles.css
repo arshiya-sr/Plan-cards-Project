@@ -1,0 +1,312 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(33, 48, 87, 1) 0%, rgba(21, 38, 89, 1) 20%, rgba(33, 48, 87, 1) 40%, rgba(21, 38, 89, 1) 60%, rgba(33, 48, 87, 1) 80%, rgba(21, 38, 89, 1) 100%);
+    font-family: 'YekanBakh', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+#playing-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 58px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 1600px;
+    padding: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.langouge-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 20px;
+    height: 30px;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    background: transparent;
+    margin-top: 30px;
+}
+
+.langouge-box a {
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+}
+
+.card {
+    width: 350px;
+    height: 720px;
+    border-radius: 16px 0 16px 0;
+    padding: 5px 14px;
+    background: linear-gradient(2deg, rgba(218, 237, 220, 1) 0%, rgba(171, 171, 171, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease-in;
+}
+
+.card:hover {
+    outline: 2px solid hsl(177, 37%, 11%);
+    outline-offset: -2px;
+    transform: scale(1.015);
+    box-shadow: 2px 3px 3px black;
+}
+
+/* top part */
+
+.top {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 2em;
+    margin: 1px 0 8px;
+    word-spacing: 5px;
+    text-shadow: 3px 2px 2px grey;
+    transform: scaleX(1.1);
+    transition: all 0.1s ease-in;
+    width: fit-content;
+}
+
+.first .card-title:hover {
+    color: hsl(32, 74%, 46%);
+    text-shadow: 3px 2px 2px hsl(32, 78%, 18%);
+}
+
+.second .card-title:hover {
+    color: hsl(64, 80%, 50%);
+    text-shadow: 3px 2px 2px hsl(64, 81%, 29%);
+}
+
+.third .card-title:hover {
+    color: hsl(194, 88%, 56%);
+    text-shadow: 3px 2px 2px hsl(194, 65%, 23%);
+}
+
+strong {
+    font-weight: 700;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 71px;
+    text-shadow: 3px 2px 3px grey;
+    margin-bottom: 14px;
+}
+
+.price-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.1em;
+    color: hsl(177, 37%, 33%);
+}
+
+.discounted-price {
+    font-size: 2.1em;
+    font-weight: 700;
+    color: hsl(0, 48%, 12%);
+    transition: all 0.1s ease-out;
+}
+
+.discounted-price:hover {
+    color: hsl(118, 81%, 49%);
+    text-shadow: 3px 2px 3px hsl(118, 80%, 20%);
+}
+
+.price-unit {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.price-unit p {
+    width: 80px;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-bottom: 5px;
+    transition: all 0.1s ease-out;
+}
+
+.price-holder:has(.discounted-price:hover)+.price-unit p {
+    color: hsl(118, 100%, 51%);
+    text-shadow: 3px 2px 3px hsl(117, 79%, 11%);
+}
+
+/* middle */
+
+.middle {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    background: linear-gradient(2deg, rgba(198, 247, 242, 0.52) 0%, rgba(177, 224, 224, 0.52) 100%);
+    filter: blur;
+    border-radius: 8px;
+    padding: 6px;
+    transition: background 0.3s ease-in, transform 0.1s ease-in;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f0f0f0;
+}
+
+.middle:hover {
+    background: linear-gradient(2deg, rgba(198, 247, 242, 0.82) 0%, rgba(177, 224, 224, 0.82) 100%);
+    outline: 2px solid hsl(177, 34%, 26%);
+    outline-offset: -1px;
+}
+
+.subtitle {
+    font-size: 1.35em;
+    margin: 6px 4px;
+}
+
+.mid-li {
+    margin-right: 20px;
+    font-size: 1.02em;
+    line-height: 1.3em;
+}
+
+/* down part */
+
+.down {
+    height: fit-content;
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.purchase-btn {
+    background: linear-gradient(41deg, rgba(99, 133, 99, 1) 0%, rgba(86, 173, 85, 1) 25%, rgba(85, 194, 83, 1) 50%, rgba(49, 194, 47, 1) 75%, rgba(46, 168, 44, 1) 100%);
+    width: 100%;
+    height: 80px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: all 0.2s ease-out;
+}
+
+.purchase-btn:hover {
+    font-weight: 900;
+    color: white;
+    background: linear-gradient(41deg, rgba(49, 69, 49, 1) 0%, rgba(44, 92, 44, 1) 25%, rgba(40, 92, 39, 1) 50%, rgba(21, 94, 19, 1) 75%, rgba(25, 99, 23, 1) 100%);
+    cursor: pointer;
+}
+
+/* scrollbar */
+
+.custom-scroll-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scroll-box::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.custom-scroll-box::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.custom-scroll-box::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* mobile design */
+
+@media (max-width: 600px) {
+
+    #playing-cards {
+        gap: 40px;
+        padding: 60px 10px 100px;
+        justify-content: center;
+    }
+
+    .card:first-child {
+        margin-top: 0;
+    }
+
+    .card:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* langouge change */
+
+.en {
+    display: none;
+}
+
+#fa,
+#en {
+    display: none;
+}
+
+.en {
+    display: none;
+}
+
+#en:target~#playing-cards .fa {
+    display: none;
+}
+
+#en:target~#playing-cards {
+    flex-direction: row-reverse;
+}
+
+#en:target~#playing-cards .card-title {
+    transform: scaleX(1);
+}
+
+#en:target~#playing-cards .price-box {
+    flex-direction: row-reverse;
+}
+
+#en:target~#playing-cards .middle {
+    text-align: left;
+}
+
+#en:target~#playing-cards .mid-li {
+    line-height: 1.3em;
+}
+
+#en:target~#playing-cards .en {
+    display: block;
+}
+
+#en:target~#playing-cards button .fa {
+    display: none;
+}
+
+#en:target~#playing-cards button .en {
+    display: inline;
+}
